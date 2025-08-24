@@ -1,0 +1,52 @@
+spring.:
+  application:
+    name: configserver
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///C:\Projects\config-management\configserver\src\main\resources\config
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/PrakkiKhyathi/app-configuration
+#          username: ${GIT_USER}
+#          password: ${GIT_TOKEN}
+#  profiles:
+#    active: jdbc
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/configdb
+#    username: root
+#    password: khyathi
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  cloud:
+#    config:
+#      server:
+#        jdbc:
+#          sql: "select prop_key, prop_value from properties where application=? and profile=? and label=?"
+#          default-label: main
+#encrypt:
+#  key: "OE9JHFJKDNGJS0894KJNJJ"
+encrypt:
+  key-store:
+    location: config.server.jks
+    password: mypass
+    alias: config-server-key
+
+
+
+server:
+  port: 8888
