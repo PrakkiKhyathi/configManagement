@@ -1,11 +1,8 @@
-package com.config.configdemo.Service;
-
+package com.config.configdemo.service;
 
 public class UserService {
     public String processUser()
     {
-        return "Validation Done";
+        return "Login Success";
     }
 }
-
-
