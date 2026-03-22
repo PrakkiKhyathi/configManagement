@@ -26,6 +26,7 @@ public class BuildInfoController {
         @GetMapping("/build/info")
         public String getBuildInfo()
         {
+            System.out.print("Build ID: "+ buildId +", version: "+ buildVersion+", Name: "+ buildName);
             return "Build ID: "+ buildId +", version: "+ buildVersion+", Name: "+ buildName;
         }
 }
